@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    :root{
+        --primary-color: #5bb54b; /* The main brand color used for buttons, links, and highlights */
+        --secondary-color: #a2d9b0; /* A complementary color used for accents and secondary elements */
+        --accent-color: #76c797; /* A color used to add contrast and emphasize important elements */
+        --background-color: #f6fbf5; /* The main background color of the website */
+        --foreground-color: #2d3a2e; /* The main text color ensuring readability */
+        --muted-color: #90a892; /* Used for disabled states or subtle UI elements */
+        --success-color: #4caf50; /* Used for success messages and positive UI feedback */
+        --warning-color: #f4a261; /* Used for warnings and alerts */
+        --error-color: #e63946; /* Used for errors and invalid states */
+        --info-color: #2a9d8f; /* Used for informational messages */
+    }
+}

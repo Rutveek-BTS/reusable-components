@@ -1,0 +1,73 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      textColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        accent: "var(--accent-color)",
+        foreground: "var(--foreground-color)",
+        muted: "var(--muted-color)",
+        suceess: "var(--success-color)",
+        warning: "var(--warning-color)",
+        error: "var(--error-color)",
+        info: "var(--info-color)",
+      },
+      backgroundColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        accent: "var(--accent-color)",
+        foreground: "var(--foreground-color)",
+        muted: "var(--muted-color)",
+        suceess: "var(--success-color)",
+        warning: "var(--warning-color)",
+        error: "var(--error-color)",
+        info: "var(--info-color)",
+      },
+      borderColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        accent: "var(--accent-color)",
+        foreground: "var(--foreground-color)",
+        muted: "var(--muted-color)",
+        success: "var(--success-color)",
+        warning: "var(--warning-color)",
+        error: "var(--error-color)",
+        info: "var(--info-color)",
+      },
+      ringColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        success: "var(--success-color)",
+        warning: "var(--warning-color)",
+        error: "var(--error-color)",
+        info: "var(--info-color)",
+      },
+      outlineColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        error: "var(--error-color)",
+      },
+      gradientColorStops: {
+        start: "var(--primary-color)",
+        middle: "var(--secondary-color)",
+        end: "var(--accent-color)",
+      },
+      boxShadowColor: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        success: "var(--success-color)",
+        warning: "var(--warning-color)",
+        error: "var(--error-color)",
+        info: "var(--info-color)",
+      },
+      placeholderColor: {
+        muted: "var(--muted-color)",
+        primary: "var(--primary-color)",
+        error: "var(--error-color)",
+      },
+    },
+  },
+  plugins: [],
+};
