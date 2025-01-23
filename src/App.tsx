@@ -1,6 +1,7 @@
-import Button from "./components/Buttons/Button";
+// import Button from "./components/Buttons/Button";
 import { useState } from "react";
-import Input from "./components/Inputs/Input";
+// import Input from "./components/Inputs/Input";
+import InpCheck from "./components/Inputs/inpCheck";
 
 // Implementation of Button Component
 
@@ -42,29 +43,6 @@ import Input from "./components/Inputs/Input";
 //     inpValue: formData.fName,
 //     inpPlaceholder: "Enter First Name",
 //     isRequired: true,
-//     inpMinLen: undefined,
-//     inpMaxLen: undefined,
-//     inpMinNum: undefined,
-//     inpMaxNum: undefined,
-//     inpReadOnly: false,
-//     inpMultipleFiles: false,
-//     inpSize: 25,
-//     inpAccept: "",
-//     inpChange: handleChange,
-//   };
-
-//   const lNameProp = {
-//     classes: "border-primary border-2",
-//     inpLbl: "Last Name",
-//     inpType: "text",
-//     inpName: "lName",
-//     inpValue: formData.lName,
-//     inpPlaceholder: "Enter Last Name",
-//     isRequired: true,
-//     inpMinLen: undefined,
-//     inpMaxLen: undefined,
-//     inpMinNum: undefined,
-//     inpMaxNum: undefined,
 //     inpReadOnly: false,
 //     inpMultipleFiles: false,
 //     inpSize: 25,
@@ -74,15 +52,64 @@ import Input from "./components/Inputs/Input";
 //   return (
 //     <div>
 //       <Input {...fNameProp} />
-//       <Input {...lNameProp} />
+//       {/* <Input {...lNameProp} /> */}
 //     </div>
 //   );
 // }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Implementation of Input Checkbox Component
+
 const App = () => {
-  return <div>App</div>;
+  const [checks, setChecks] = useState<string[]>([]);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = e.target;
+    setChecks((prev) =>
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
+    );
+  };
+
+  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setSelectedValue(value);
+  };
+
+  const inpChkProp = {
+    chkType: "checkbox",
+    chkName: "Brand",
+    chkLblVal: ["Audi", "BMW", "Benz", "Ferrari", "Lambo"],
+    chkReadOnly: false,
+    chkChange: handleCheckChange,
+    groupClass: "",
+    chkClass: "w-1/4 rounded-md border-secondary border-2 m-2",
+    chkHorizon: false,
+    isChecked: (value: string) => checks.includes(value),
+    showCheckBox: false,
+  };
+
+  const inpRadProp = {
+    chkType: "radio",
+    chkName: "Gender",
+    chkLblVal: ["Male", "Female", "L", "G", "B", "T", "Q"],
+    chkReadOnly: false,
+    chkChange: handleRadioChange,
+    groupClass: "",
+    chkClass: "w-1/4 rounded-md border-secondary border-2 m-2",
+    chkHorizon: true,
+    isChecked: (value: string) => selectedValue === value,
+    showCheckBox: false,
+  };
+  return (
+    <div className="w-1/2 h-96 bg-slate-100">
+      <label htmlFor="">Check Box</label>
+      <InpCheck {...inpChkProp} />
+      <label htmlFor="">Radio</label>
+      <InpCheck {...inpRadProp} />
+    </div>
+  );
 };
 
 export default App;

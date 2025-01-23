@@ -1,5 +1,6 @@
-import { inputTypes } from "./inputType";
+import { InputTypes } from "./inputType";
 
+// The Components Works for type: name, password, email, number, tel
 const Input = ({
   inpLbl,
   inpType,
@@ -12,33 +13,83 @@ const Input = ({
   inpMinNum,
   inpMaxNum,
   inpReadOnly = false,
-  inpMultipleFiles = false,
   inpSize,
-  inpAccept,
   inpChange,
   classes,
-}: inputTypes) => {
+}: InputTypes) => {
   return (
     <div>
       <label htmlFor={inpName}>{inpLbl}</label>
       <br />
-      <input
-        type={inpType}
-        name={inpName}
-        value={inpValue}
-        placeholder={inpPlaceholder}
-        required={isRequired}
-        minLength={inpMinLen}
-        maxLength={inpMaxLen}
-        min={inpMinNum}
-        max={inpMaxNum}
-        readOnly={inpReadOnly}
-        multiple={inpMultipleFiles}
-        size={inpSize}
-        accept={inpAccept}
-        onChange={inpChange}
-        className={classes}
-      />
+      {inpType == "text" ? (
+        <input
+          type={inpType}
+          name={inpName}
+          value={inpValue}
+          placeholder={inpPlaceholder}
+          required={isRequired}
+          minLength={inpMinLen}
+          maxLength={inpMaxLen}
+          readOnly={inpReadOnly}
+          size={inpSize}
+          onChange={inpChange}
+          className={classes}
+        />
+      ) : inpType == "password" ? (
+        <input
+          type={inpType}
+          name={inpName}
+          value={inpValue}
+          placeholder={inpPlaceholder}
+          required={isRequired}
+          minLength={inpMinLen}
+          maxLength={inpMaxLen}
+          readOnly={inpReadOnly}
+          size={inpSize}
+          onChange={inpChange}
+          className={classes}
+        />
+      ) : inpType == "email" ? (
+        <input
+          type={inpType}
+          name={inpName}
+          value={inpValue}
+          placeholder={inpPlaceholder}
+          required={isRequired}
+          readOnly={inpReadOnly}
+          size={inpSize}
+          onChange={inpChange}
+          className={classes}
+        />
+      ) : inpType == "number" ? (
+        <input
+          type={inpType}
+          name={inpName}
+          value={inpValue}
+          placeholder={inpPlaceholder}
+          required={isRequired}
+          min={inpMinNum}
+          max={inpMaxNum}
+          readOnly={inpReadOnly}
+          size={inpSize}
+          onChange={inpChange}
+          className={classes}
+        />
+      ) : inpType == "tel" ? (
+        <input
+          type={inpType}
+          name={inpName}
+          value={inpValue}
+          placeholder={inpPlaceholder}
+          required={isRequired}
+          readOnly={inpReadOnly}
+          size={inpSize}
+          onChange={inpChange}
+          className={classes}
+        />
+      ) : (
+        <>Component valid only for type:[text, password, email, number, tel]</>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-export interface inputTypes {
+export interface InputTypes {
   inpLbl: any;
   inpType?: any;
   inpName?: any;
@@ -10,9 +10,22 @@ export interface inputTypes {
   inpMinNum?: any;
   inpMaxNum?: any;
   inpReadOnly?: any;
-  inpMultipleFiles?: any;
+  // inpMultipleFiles?: any;
   inpSize?: any;
-  inpAccept?: any;
+  // inpAccept?: any;
   inpChange?: any;
   classes?: any;
+}
+
+export interface InpCheckTypes {
+  chkType: string;
+  chkName: string;
+  chkLblVal: string[];
+  chkReadOnly?: boolean;
+  chkChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  groupClass?: string;
+  chkClass?: string;
+  chkHorizon?: boolean;
+  showCheckBox?: boolean;
+  isChecked: (value: string) => boolean;
 }
