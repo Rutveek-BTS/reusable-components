@@ -29,3 +29,16 @@ export interface InpCheckTypes {
   showCheckBox?: boolean;
   isChecked: (value: string) => boolean;
 }
+
+export interface InpFileTypes {
+  inpLbl: string;
+  inpName: string;
+  inpValue?: any[];
+  isRequired?: boolean;
+  inpReadOnly?: boolean;
+  inpMultipleFiles?: boolean;
+  inpAccept?: any;
+  inpChange?: () => void;
+  classes?: string;
+  isDisabled?: boolean;
+}
